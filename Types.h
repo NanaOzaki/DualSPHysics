@@ -139,7 +139,13 @@ typedef enum{
   KERNEL_Wendland=2,         ///<Wendland kernel.
   KERNEL_Cubic=1,            ///<Cubic Spline kernel.
   KERNEL_None=0 
-}TpKernel;                  
+}TpKernel;        
+
+typedef enum{ 
+  SLIPCOND_Slip=2,         ///<Wendland kernel.
+  SLIPCOND_NoSlip=1,            ///<Cubic Spline kernel.
+  SLIPCOND_None=0 
+}TpSlipCond; 
 
 ///Types of viscosity treatment.
 typedef enum{ 

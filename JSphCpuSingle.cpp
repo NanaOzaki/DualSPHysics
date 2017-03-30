@@ -842,6 +842,11 @@ void JSphCpuSingle::Run(std::string appname,JCfgRun *cfg,JLog2 *log){
   TimerPart.Start();
   Log->Print(string("\n[Initialising simulation (")+RunCode+")  "+fun::GetDateTime()+"]");
   PrintHeadPart();
+
+	//-finding dummy particle relations to wall particles
+	/*memset(MirrorPosc,0,sizeof(tdouble3)*Npb);
+	JSphCpu::MirrorBoundary(Npb,Posc,Idpc,MirrorPosc,Codec,MirrorCell);  
+	JSphCpu::MirrorDCell(Npb,Codec,MirrorPosc,MirrorCell,Idpc);*/
   while(TimeStep<TimeMax){
     if(ViscoTime)Visco=ViscoTime->GetVisco(float(TimeStep));
     double stepdt=ComputeStep();
